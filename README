@@ -1,0 +1,93 @@
+## Project Structure
+#### Coroutines
+<ul>
+  <li>|--viewmodel -> -Used Coroutines launch for call API service and insert data into local database in a background thread. </li>
+  <li>|--MyApplication - To start Workmanager job and run in the background thread.</li>
+  </ul>
+  
+#### ---Android Architecture Components---
+
+  #### LiveData 
+  
+  <ul>
+  <li>|--viewmodel -> LiveData has been used for search, it observes the search items and update the displayed items when search results change  
+    It has been used for filter, it observes the filtered items and update the displayed items when result change
+    It has been used for observe loading set and display progress bar</li>
+  <li>|--viewmodel ->  Here, LiveData has been used for observe selected cakes </li>
+  </ul>
+  
+  #### ViewModel 
+  <ul>
+  <li>|--viewmodel -> - It is preparing and managing data for display  </li>
+  </li>|--viewmodel -> - It is preparing and managing data for display </li>
+  </ul>
+  
+  #### Workmanager
+  <ul>
+  <li>|--background ->SyncDatabaseWM - Workmanager has been used here for periodically syncing application data with server on a background thread.</li>
+  </ul>
+  
+  #### ViewBinding/DataBinding 
+  <ul>
+  <li>|--CakeList_Fragment - ViewBinding has been used here for resource layout, recyclerView and searchView.</li>
+  <li>Databinding has been used for bind UI components with data source.</li>
+  </ul>
+  
+  #### Room 
+  <ul>
+  <li>|--database -> DatabaseCharacter - Created @Entity for Room Database with expected fields.</li>
+  <li>|--database -> Room - Created @Ddatabse &  @Dao which contains all database related queries to manage data with database.
+  </ul>
+  
+  #### Koin
+  <ul>
+  <li>|--di -> Use Koin to perform API Service module injection, database module injection, network module injection, repository module injection and viewmodel module injection.</li>
+  </ul>
+  
+#### Retrofit 
+<ul>
+  <li>|--di -> NetworkModule - Retrofit has been used to perform network calls</li>
+  </ul>
+  
+#### GSON
+<ul>
+  <li>|--di -> NetworkModule - Gson has been used for json data parsing.</li> 
+  </ul>
+  
+#### Glide 
+<ul>
+  <li>|--util ->BindingAdapters - Here, Glide image loading library has been used to load image into imageview.</li>
+  </ul>
+  
+#### SafeArgs
+<ul>
+  <li>Here, SafeArgs has been used for passed data of selected Character(CharacterList_Fragment) to CharacterDetail_Fragment.</li>
+  </ul>
+  
+#### Material Components for Android 
+<ul>
+  <li>Material Cardview has been used to display Characters in RecyclerView. </li>
+  </ul>
+  
+
+
+## Built With 🛠
+<p> Kotlin - First class and official programming language for Android development.</p>
+<p>Coroutines - For concurrency and multithreading</p>
+<p>Android Architecture Components - Collection of libraries that help you design robust, testable, and maintainable apps.</p>
+<ul>
+  <li>LiveData - Data objects that notify views when the underlying database changes.</li>
+  <li>ViewModel - Stores UI-related data that it's survive configuration changes.</li>
+  <li>Workmanager - It is for background work that's deferrable and requires guranteed execution.</li>
+  <li>ViewBinding - Generates a binding class for each XML layout file present in that module and allows you to more easily write code that interacts with views.</li>
+  <li>Room - SQLite object relational mapping library.</li>
+  </ul>
+<p>Koin - It's a lightweight dependency injection framework for kotlin.<p>
+<p>Retrofit - A type-safe HTTP client for Android and Java.</p>
+<p>GSON - Gson is a Java library that can be used to convert Java Objects into their JSON representation.<p>
+<p>Glide - An image loading library for Android </p>
+<p>SafeArgs - To pass data between fragments
+<p>Material Components for Android - Modular and customizable Material Design UI components for Android.</p>
+
+## Architecture
+<p>This app uses MVVM (Model View View-Model) architecture.</p>
